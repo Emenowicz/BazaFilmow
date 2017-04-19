@@ -66,6 +66,10 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         notifyItemRangeChanged(position, getItemCount());
     }
 
+    void setItemRating(int position, float rating){
+        moviesList.get(position).setRating(rating);
+    }
+
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         TextView title, year, genre;
         ImageView eyeImage, movieImage;
@@ -77,6 +81,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             year = (TextView) view.findViewById(R.id.movie_year);
             movieImage = (ImageView) view.findViewById(R.id.movie_image);
             eyeImage = (ImageView) view.findViewById(R.id.eyeImageView);
+            view.setOnClickListener(this);
+            view.setOnLongClickListener(this);
         }
 
 
@@ -95,14 +101,12 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
         @Override
         public boolean onLongClick(View v) {
-            if (eyeImage.getVisibility() == View.INVISIBLE) {
-                eyeImage.setVisibility(View.VISIBLE);
-                moviesList.get(getAdapterPosition()).setToWatch(true);
-            } else {
-                eyeImage.setVisibility(View.INVISIBLE);
+            if (moviesList.get(getAdapterPosition()).isToWatch()) {
                 moviesList.get(getAdapterPosition()).setToWatch(false);
+            } else {
+                moviesList.get(getAdapterPosition()).setToWatch(true);
             }
-
+            notifyDataSetChanged();
             return true;
         }
     }

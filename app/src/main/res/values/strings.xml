@@ -7,4 +7,6 @@
     <string name="rating">Ocena</string>
     <string name="description">Opis</string>
     <string name="image">Obraz</string>
+    <string name="movies">Filmy</string>
+    <string name="template">Template123</string>
 </resources>
