@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Baza Filmów</string>
+    <string name="title">Tytuł</string>
+    <string name="genre">Gatunek</string>
+    <string name="year">Rok</string>
+    <string name="position">Pozycja</string>
+    <string name="rating">Ocena</string>
+    <string name="description">Opis</string>
+    <string name="image">Obraz</string>
 </resources>

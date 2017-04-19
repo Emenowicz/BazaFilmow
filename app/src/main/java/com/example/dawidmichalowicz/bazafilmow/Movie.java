@@ -39,4 +39,12 @@ public class Movie {
     public void setToWatch(boolean toWatch) {
         this.toWatch = toWatch;
     }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
+    }
 }
