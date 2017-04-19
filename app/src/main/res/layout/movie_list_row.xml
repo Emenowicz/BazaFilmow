@@ -24,7 +24,8 @@
         android:layout_toEndOf="@id/movie_image"
         android:paddingEnd="8dp"
         android:paddingStart="8dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/title"/>
 
     <TextView
         android:id="@+id/movie_genre"
@@ -42,7 +43,8 @@
         android:layout_below="@id/movie_genre"
         android:layout_toEndOf="@id/movie_image"
         android:paddingEnd="8dp"
-        android:paddingStart="8dp" />
+        android:paddingStart="8dp"
+        android:textColor="@color/year"/>
 
     <ImageView
         android:id="@+id/eyeImageView"
