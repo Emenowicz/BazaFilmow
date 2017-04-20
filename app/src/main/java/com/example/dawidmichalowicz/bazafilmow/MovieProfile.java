@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import butterknife.BindString;
 import butterknife.BindView;
@@ -39,18 +38,8 @@ public class MovieProfile extends AppCompatActivity {
     String rating;
     @BindString(R.string.position)
     String position;
-//
-//    @BindView(R.id.movie_title) TextView titleDesc;
-//    @BindView(R.id.movie_image) ImageView imageViewDesc;
-//    @BindView(R.id.description) TextView textDesc;
-//    @BindView(R.id.ratingBar) RatingBar ratingBar;
-//    @BindString(R.string.title) String title;
-//    @BindString(R.string.year) String year;
-//    @BindString(R.string.genre) String genre;
-//    @BindString(R.string.image) String img;
-//    @BindString(R.string.rating) String rating;
-//    @BindString(R.string.position) String position;
-
+    @BindString(R.string.image)
+    String image;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,18 +52,15 @@ public class MovieProfile extends AppCompatActivity {
         titleTV.setText(getIntent().getStringExtra(title));
         genreTV.setText(getIntent().getStringExtra(genre));
         descriptionTV.setText(getIntent().getStringExtra(description));
+        movieImage.setImageResource(Utils.chooseImage((String) genreTV.getText()));
         ratingBar.setRating(getIntent().getFloatExtra(rating, 0.0f));
-        Toast.makeText(this,String.valueOf(getIntent().getFloatExtra(rating,0.0f)),Toast.LENGTH_SHORT).show();
     }
-
-
 
     @Override
     public void onBackPressed() {
         Intent resIntent = new Intent();
         resIntent.putExtra(position, getIntent().getIntExtra(position, 0));
         resIntent.putExtra(rating, ratingBar.getRating());
-        Toast.makeText(this,"rating:" + ratingBar.getRating(),Toast.LENGTH_SHORT).show();
         setResult(RESULT_OK, resIntent);
         finish();
     }

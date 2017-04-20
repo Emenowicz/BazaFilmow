@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,10 +44,13 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         Movie movie = moviesList.get(position);
+        String genre = movie.getGenre();
         MyViewHolder myHolder = (MyViewHolder) holder;
         myHolder.title.setText(movie.getTitle());
         myHolder.genre.setText(movie.getGenre());
         myHolder.year.setText(movie.getYear());
+        myHolder.movieImage.setImageResource(Utils.chooseImage(genre));
+
         if (movie.isToWatch()) {
             myHolder.eyeImage.setVisibility(View.VISIBLE);
         } else {
@@ -71,8 +73,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         moviesList.get(position).setRating(rating);
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
-        TextView title, year, genre, description;
+    private class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
+        TextView title, year, genre;
         ImageView eyeImage, movieImage;
 
         MyViewHolder(View view) {
@@ -94,7 +96,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             it.putExtra(context.getString(R.string.title),title.getText().toString());
             it.putExtra(context.getString(R.string.genre),genre.getText().toString());
             it.putExtra(context.getString(R.string.year),year.getText().toString());
-            //it.putExtra(context.getString(R.string.image),Integer.parseInt(movieImage.getTag().toString()));
             it.putExtra(context.getString(R.string.description),moviesList.get(getAdapterPosition()).getDescription());
             it.putExtra(context.getString(R.string.rating),moviesList.get(getAdapterPosition()).getRating());
             it.putExtra(context.getString(R.string.position),getAdapterPosition());
