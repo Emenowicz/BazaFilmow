@@ -4,7 +4,7 @@ package com.example.dawidmichalowicz.bazafilmow;
  * Created by Dawid Michałowicz on 20.04.2017.
  */
 
-public class Utils {
+class Utils {
     static int chooseImage(String genre){
         int imageId;
         switch(genre){
