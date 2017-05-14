@@ -41,8 +41,8 @@ public class MovieFragment extends Fragment {
                 ActorFragment actorFragment = new ActorFragment();
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container,actorFragment);
-                fragmentTransaction.add(R.id.fragment_container2,imageFragment);
+                fragmentTransaction.replace(R.id.fragment_container,imageFragment);
+                fragmentTransaction.add(R.id.fragment_container2,actorFragment);
                 fragmentTransaction.commit();
             }
         });
