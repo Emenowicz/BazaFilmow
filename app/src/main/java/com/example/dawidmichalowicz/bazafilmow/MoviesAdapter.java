@@ -91,11 +91,10 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
         @Override
         public void onClick(View v) {
-            Intent it = new Intent(context, MovieProfile.class);
+            Intent it = new Intent(context, MovieContainer.class);
             it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             it.putExtra(context.getString(R.string.title),title.getText().toString());
             it.putExtra(context.getString(R.string.genre),genre.getText().toString());
-            it.putExtra(context.getString(R.string.year),year.getText().toString());
             it.putExtra(context.getString(R.string.description),moviesList.get(getAdapterPosition()).getDescription());
             it.putExtra(context.getString(R.string.rating),moviesList.get(getAdapterPosition()).getRating());
             it.putExtra(context.getString(R.string.position),getAdapterPosition());
