@@ -34,22 +34,21 @@ public class MovieContainer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.movie_profile_container);
         ButterKnife.bind(this);
-        if (savedInstanceState != null) {
-            actualPage = savedInstanceState.getString("State");
-        }
+
         Bundle bundle = new Bundle();
         bundle.putString(title, getIntent().getExtras().getString(title));
         bundle.putString(description, getIntent().getExtras().getString(description));
         bundle.putString(genre, getIntent().getExtras().getString(genre));
         bundle.putString(title, getIntent().getExtras().getString(title));
         bundle.putFloat(rating, getIntent().getFloatExtra(rating, 0.0f));
+        if (savedInstanceState != null) {
+            bundle.putFloat(rating,savedInstanceState.getFloat(rating));
+            actualPage = savedInstanceState.getString("State");
+        }
         movieFragment = new MovieFragment();
         movieFragment.setArguments(bundle);
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        if (savedInstanceState.get("State").equals("movieFragment")) {
-            fragmentTransaction.add(R.id.fragment_container, movieFragment);
-        }
         fragmentTransaction.add(R.id.fragment_container, movieFragment);
         fragmentTransaction.commit();
     }
@@ -65,6 +64,7 @@ public class MovieContainer extends AppCompatActivity {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
+        outState.putFloat(rating,movieFragment.getRating());
         outState.putString("Page", actualPage);
     }
 

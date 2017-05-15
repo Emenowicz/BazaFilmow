@@ -10,4 +10,54 @@
     <string name="movies">Filmy</string>
     <string name="template">Template123</string>
     <string name="actors">Aktorzy</string>
+    <string name="textView">textView</string>
+    <array name="loading_images">
+        <item>@drawable/img1</item>
+        <item>@drawable/img2</item>
+        <item>@drawable/img3</item>
+        <item>@drawable/img4</item>
+        <item>@drawable/img5</item>
+        <item>@drawable/img6</item>
+        <item>@drawable/img7</item>
+        <item>@drawable/img8</item>
+        <item>@drawable/img9</item>
+        <item>@drawable/img10</item>
+        <item>@drawable/img11</item>
+        <item>@drawable/img12</item>
+        <item>@drawable/img13</item>
+        <item>@drawable/img14</item>
+        <item>@drawable/img15</item>
+        <item>@drawable/img16</item>
+        <item>@drawable/img17</item>
+        <item>@drawable/img18</item>
+    </array>
+    <array name="actor_images">
+        <item>@drawable/act1</item>
+        <item>@drawable/act2</item>
+        <item>@drawable/act3</item>
+        <item>@drawable/act4</item>
+        <item>@drawable/act5</item>
+        <item>@drawable/act6</item>
+        <item>@drawable/act7</item>
+        <item>@drawable/act8</item>
+        <item>@drawable/act9</item>
+        <item>@drawable/act10</item>
+        <item>@drawable/act11</item>
+        <item>@drawable/act12</item>
+    </array>
+    <array name="actor_names">
+        <item>Rosie Holden</item>
+        <item>Jonathan Thorpe</item>
+        <item>Ruby Dunn</item>
+        <item>Holly Kent</item>
+        <item>Millie Matthews</item>
+        <item>Corey Bond</item>
+        <item>Naomi Woods</item>
+        <item>Francesca Bennett</item>
+        <item>Alexandra Dickinson</item>
+        <item>Alexandra Clayton</item>
+        <item>Andrew Brien</item>
+        <item>Amy Rose</item>
+    </array>
+    <string name="default_name">unknown</string>
 </resources>

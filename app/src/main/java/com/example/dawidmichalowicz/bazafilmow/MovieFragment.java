@@ -34,7 +34,7 @@ public class MovieFragment extends Fragment {
         genreTV = (TextView) view.findViewById(R.id.movie_genre);
         setData();
 
-        descriptionTV.setOnClickListener(new View.OnClickListener(){
+        movieImage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 ImageFragment imageFragment = new ImageFragment();

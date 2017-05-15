@@ -46,8 +46,6 @@ public class MovieProfile extends AppCompatActivity {
         setContentView(R.layout.movie_profile);
         ButterKnife.bind(this);
         setData();
-        Bundle bundle = new Bundle();
-        //HERE;
     }
 
     private void setData() {
