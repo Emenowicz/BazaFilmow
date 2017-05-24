@@ -44,20 +44,30 @@
         <item>@drawable/act10</item>
         <item>@drawable/act11</item>
         <item>@drawable/act12</item>
+        <item>@drawable/act13</item>
+        <item>@drawable/act14</item>
+        <item>@drawable/act15</item>
+        <item>@drawable/act16</item>
+        <item>@drawable/act17</item>
     </array>
     <array name="actor_names">
-        <item>Rosie Holden</item>
+        <item>Nathan L. Triplett</item>
         <item>Jonathan Thorpe</item>
         <item>Ruby Dunn</item>
-        <item>Holly Kent</item>
+        <item>Tyler S. Tanner</item>
         <item>Millie Matthews</item>
         <item>Corey Bond</item>
-        <item>Naomi Woods</item>
+        <item>Melanie R. Boswell</item>
         <item>Francesca Bennett</item>
         <item>Alexandra Dickinson</item>
         <item>Alexandra Clayton</item>
-        <item>Andrew Brien</item>
+        <item>Peggy J. Williams</item>
         <item>Amy Rose</item>
+        <item>Cheryl H. Smedley</item>
+        <item>Joann L. Branch</item>
+        <item>Sally R. Nicholson</item>
+        <item>Phyllis D. Lightfoot</item>
+        <item>Donald W. Brown</item>
     </array>
     <string name="default_name">unknown</string>
 </resources>
