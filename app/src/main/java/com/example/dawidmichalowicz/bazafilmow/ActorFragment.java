@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 /**
  * Created by Dawid Michałowicz on 14.05.2017.
  */
@@ -21,7 +23,7 @@ public class ActorFragment extends Fragment {
     TextView name1;
     TextView name2;
     TextView name3;
-
+    ArrayList<Integer> numbers = new ArrayList<>();
 
     @Nullable
     @Override
@@ -33,6 +35,7 @@ public class ActorFragment extends Fragment {
         name1 = (TextView) view.findViewById(R.id.textView);
         name2 = (TextView) view.findViewById(R.id.textView2);
         name3 = (TextView) view.findViewById(R.id.textView3);
+
         setData(image1, name1);
         setData(image2, name2);
         setData(image3, name3);
@@ -42,11 +45,18 @@ public class ActorFragment extends Fragment {
     private void setData(ImageView iv, TextView tv) {
         TypedArray images = getResources().obtainTypedArray(R.array.actor_images);
         String[] names = getResources().getStringArray(R.array.actor_names);
-
         int choiceImg = (int) (Math.random() * images.length());
-        int choiceTxt = (int) (Math.random() * names.length);
+        if (numbers.isEmpty()) {
+            numbers.add(choiceImg);
+        } else {
+            while (numbers.contains(choiceImg)) {
+                choiceImg = (int) (Math.random() * images.length());
+            }
+            numbers.add(choiceImg);
+        }
+
         iv.setImageResource(images.getResourceId(choiceImg, R.drawable.img1));
-        tv.setText(names[choiceTxt]);
+        tv.setText(names[choiceImg]);
         images.recycle();
     }
 
